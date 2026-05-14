@@ -1,0 +1,104 @@
+/*
+font-family: "Montserrat", sans-serif;
+font-family: "Fraunces", serif;
+*/
+
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background-color: hsl(30, 38%, 92%);
+    height: 100vh; /*al 100 del espacio*/
+    display: flex; /*flexbox*/
+    justify-content: center; /*alineamineto horizontal*/
+    align-items: center; /*alineamiento vertical*/
+    }
+
+main{
+width: 650px;
+display: flex; /* alineacion en columnas*/
+min-height: 480px; /* alto minimo de la caja*/
+border-radius: 14px;
+overflow: hidden; /* cuando se desborda las cajas, lo contiene*/
+
+    }
+
+
+.photo{
+    width: 350px;
+    background-image: url(images/image-product-desktop.jpg);
+    background-size: cover;
+
+
+}
+
+.content{
+        width: 300px;
+        background-color: white;
+        padding: 28px;/*14px x 2 =28px*/
+        display: flex;
+        flex-direction: column; /*espaciado en filas*/
+        gap: 21px; /*14 + 7 =21  tamaño de espacio entre filas por flex direction column*/
+    }
+
+.content h2{
+    /*border: 1px solid red;*/
+    margin: 0;
+    text-transform: uppercase; /* conbierte en mayuscula*/
+    font-weight: 500;
+    font-size: 14px;
+    color: hsl(228, 12%, 48%);
+    letter-spacing: 7px;
+}
+
+.content h1{
+    margin: 0;
+    font-family: "Fraunces", serif;
+    color: hsl(212, 21%, 14%);
+    font-weight: 700; /* grosor de letra*/
+    font-size: 38px;
+    line-height: 1; /* espaciado entre linea de parrafo*/
+
+}
+
+.content p{
+    margin: 0;
+    color: hsl(228, 12%, 48%);
+    font-weight: 500; /* grosor de letra*/
+    font-size: 16px;
+    line-height: 1.7; /* espaciado entre linea de parrafo*/
+}
+
+
+.content div{
+    display: flex;
+    align-items: center; /*alinea los elementos*/
+    gap: 21px; /* espacio entre columnas*/
+}
+
+.content span{
+    font-family: "Fraunces", serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: hsl(158, 36%, 37%);
+}
+.content s{
+    color: hsl(228, 12%, 48%);
+
+}
+
+.content button{
+    color: white;
+    background-color: hsl(158, 42%, 18%);
+    font-weight: 700; /* grosor de letra*/
+    font-size: 14px;
+    border: none; /*quitar borde*/
+    font-family: "Montserrat", sans-serif; /*en botones cambiar la fuente*/
+    padding: 16px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center; /* alinea imagen y texto*/
+    gap: 14px;
+    
+    
+}
