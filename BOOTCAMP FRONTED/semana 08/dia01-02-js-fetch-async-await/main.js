@@ -1,85 +1,75 @@
 const url = 'https://jsonplaceholder.typicode.com/users'
 
-console.log(fetch(url))
+// fetch(url)
+//   .then(respuesta => respuesta.json())
+//   .then(data => {
+//     console.log(data)
+//   })
+//   .catch(error => {
+//     console.log(error)
+//   })
 
-const renderUsers = (users =[]) => {
-    const divApp = document.querySelector('#app')
+const fetchUserSinRetorno = async () => {
+  const response = await fetch(url)
 
-    let usersList = ''
+  const data = await response.json()
 
-    users.forEach(user => {
-        usersList += `<h3>${user.id} - ${user.name} - ${user.username} - </h3>`
-    })
-    divApp.innerHTML = usersList
+  console.log(data)
 }
 
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        renderUsers(data)
-    })
-    .catch(error => {
-        console.log (error)
-    })
+// fetchUserSinRetorno()
 
-const fetchUserSinRetorno = async() => {    // Retorna un promesa(promise)
-    const response = await fetch(url)
+const fetchUsersConRetorno = async () => { // Retorna un promesa (Promise)
+  const response = await fetch(url)
 
-    const data = await response.json()
-    
-    console.log(data)
+  return await response.json()
 }
 
-//fetchUserSinRetorno()
+// fetchUsersConRetorno() // Retorna una promesa
+//   .then(users => console.log(users))
 
-const fetUserConRetorno = async () => {
-    const response = await fetch(url)
+const renderUsers = (users = []) => {
+  const divApp = document.querySelector('#app')
 
-    return await response.json()
+  let userLists = ''
+
+  users.forEach(user => {
+    userLists += `
+      <div>
+        <h2>${user.id} - ${user.name}</h2>
+        <p>${user.company.name}</p>
+      </div>
+    `
+  })
+
+  divApp.innerHTML = userLists
 }
-
-//fetchUserConRetorno()  //  Retorna una promesa
-// .then(users => console.log(users))
-
-const renderUsers = (users = []) =>  {
-    const divApp = document.querySelector('#app')
-
-    let usersLists = ''
-
-    users.forEach(user => {
-        usersLists += `
-        <div>
-            <h2>${user.id} - ${user.name}</h2>
-        </div>`
-    })
-}
-
 
 const fetchUsersConManejoDeErrores = async () => {
-    try {
-        const response = await fetch(url)
+  try {
+    const response = await fetch(url)
 
-        console.log(response.status)  // 200
+    console.log(response.status) // 200
 
-        if (response.status === 404) {
-            console.log('Tuvimos problemas para cargar el resurso users')
-            //return
-            throw new Error('ERROR HTTP:' + response.status)
-        }
-    return await response.json() 
-    } catch (error) {   // Manejamos errores inesperados como ausencia de Internet
-        console.log(error)
+    if (response.status === 404) {
+      console.log('Tuvimos problemas para cargar el recurso users')
+      // return
+      throw new Error('ERROR HTTP:' + response.status)
     }
+
+    return await response.json()
+  } catch (error) { // Manejamos errores inesperados como ausencia de internet
+    console.log(error)
+  }
 }
 
 fetchUsersConManejoDeErrores()
-.then(users => {
+  .then(users => {
     console.log(users)
-})
+    renderUsers(users)
+  })
 
 // TODO: Resolver estos ejercicios
 // Mostrar un mensaje de cargando
 // Mostrar solo usuarios de una ciudad, la ciudad es a su elección
 // Mostrar cuántos usuarios hay en el listado de users
-// //ienen hasta mañana para resolver estos ejercicios por discord envian las respuestas.

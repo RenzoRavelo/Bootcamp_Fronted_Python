@@ -1,16 +1,18 @@
-// TODO: Resolver los siguientes ejercicios para el siguiente jueves y compartir conmigo su repositorio con la solución.
+// TODO: Resolver los siguientes ejercicios para el siguiente jueves y compartir conmigo su repositorio con las soluciones.
 
 // Ejercicio 1: Contar vocales
 // Descripción: Retorna cuántas vocales contiene un texto dado, sin importar mayúsculas.
 
 function contarVocales(texto) {
-  const resultado = texto.toLowerCase().split('').filter(function(letra){
+  const resultado = texto.toLowerCase().split('').filter(
+    function(letra) {
       return 'aeiouáéíóú'.includes(letra)
     }
   )
+
   return resultado.length
 }
-  
+
 console.log('Ejercicio 1: Contar vocales')
 console.log(contarVocales('Hola Mundo')) //  → 4
 console.log(contarVocales('AEIOU')) //  → 5
@@ -22,14 +24,19 @@ console.log(contarVocales('Programación')) //  → 5
 // Descripción: Elimina elementos duplicados de un array manteniendo el orden.
 
 function eliminarDuplicados(arr = []) {
+  // VERSION 1
   const resultado = []
 
-  for (const elemento of arr) {
+  for(const elemento of arr) {
     if (!resultado.includes(elemento)) {
       resultado.push(elemento)
     }
   }
+
   return resultado;
+
+  // VERSION 2
+  // return [...new Set(arr)]
 }
 
 console.log('Ejercicio 2: Eliminar duplicados')
@@ -43,9 +50,8 @@ console.log(eliminarDuplicados([true, false, true])) // → [true, false]
 // Descripción: Invierte una cadena de texto.
 
 function invertirTexto(texto = '') {
-  const arreglo = texto.split('')
-  return arreglo.reverse().join('')
-  }
+  return texto;
+}
 
 console.log('Ejercicio 3: Invertir texto')
 console.log(invertirTexto('hola')) // → 'aloh'
@@ -273,3 +279,19 @@ console.log('Ejercicio 20: Texto a lista')
 console.log(textoALista(' manzana, pera , uva')) // → ['manzana', 'pera', 'uva']
 console.log(textoALista('a,b,c')) // → ['a', 'b', 'c']
 console.log(textoALista('')) // → []
+
+
+
+// Ejemplo de rescursividad
+
+function foo (i) {
+  if (i < 0) return;
+
+  console.log("inicio:" + i);
+
+  foo(i - 1);
+ 
+  console.log("fin:" + i);
+}
+
+foo(3);
