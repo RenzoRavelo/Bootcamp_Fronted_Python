@@ -14,6 +14,8 @@ if (edad >= 18) {
     console.log("no puede pasar");
 }
 
+
+
 console.log ("bab" < "bed");
 console.log ("a" > "b")
 
@@ -22,9 +24,9 @@ console.log ("a" > "b")
 let num=8;
 
 if (num > 10){
-    console.log("eres un 10");
-    if (num < 20){
-    console.log("eres un chucha");
+    console.log("eres un top 10");
+    if (num < 20) {
+    console.log("eres un pro");
     }
 }
 
@@ -60,10 +62,14 @@ switch(choice){
 
 
 
+
 let age = 40;
 
 let myAge = (age < 20)? "you win" : "you lose";
 console.log(myAge);
+
+
+
 
 
 for (let i=1; i<=5; i++){
@@ -146,7 +152,7 @@ for (let i=1; i<=5; i++){
 
 {
     function login(user) {
-        console.log("Hi, "+user);
+        console.log("Hi, " + user);
     }
 
     login ("renzo");

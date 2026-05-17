@@ -93,7 +93,7 @@ console.log(7 % 2) //residuo
 console.log(3 ** 2)//potencia
 console.log(Math.pow(3, 2))//potencia
 
-// Ejercicio: Dadas dos variables, a con valor 10 y b con valor 3. Realiza una opreación que permita obtener el residuo de la división entre a y b. Luego muestra el resultado en consola.
+// Ejercicio: Dadas dos variables, a con valor 10 y b con valor 3. Realiza una operación que permita obtener el residuo de la división entre a y b. Luego muestra el resultado en consola.
 
 const a = 10
 const b = 3
@@ -130,13 +130,14 @@ console.log("Hola " + nombre2 + ", tienes " + edad2 + " años") // Hola Victor, 
 // Mejor forma de concatenar (template strings) - backtick (alt gr + })
 console.log(`Hola ${nombre2}, tienes ${edad2} años.`)
 
-// 8. Condicionales (if)
+// 8. Condicionales (if) 
 
 let numero = 4
 
 if (numero % 2 === 0) {
     console.log('Es par')
 }
+
 
 let nota = 17
 
@@ -145,6 +146,7 @@ if (nota >= 13) {
 } else {
     console.log('Desaprobado')
 }
+
 
 let heroe = 'Spiderman'
 
@@ -159,6 +161,22 @@ if (heroe === 'Batman') {
 }
 
 // TODO: Investiguen la estructura switch
+
+let choice=5;
+
+switch(choice){
+    case 1:
+        console.log("spot 1");
+        break;
+    case 2:
+        console.log("break 2");
+        break;
+    case 3:
+        console.log("punch 3");
+        break;
+    default:
+        console.log("no choice")
+} 
 
 // 9. ESTRUCTURAS REPETITIVAS (FOR, WHILE, DO WHILE)
 
@@ -180,19 +198,20 @@ for (let i = 0; i < 10; i++) {
     console.log(i)
 }
 
-// while
 
+
+// while
 let j = 0
 
 while (j < 10) {
     console.log('while', j)
-
   // j = j + 1
     j++
 }
 
-// do while
 
+
+// do while
 let k = 0
 
 do {
@@ -207,13 +226,42 @@ do {
 
 // 1. Definir las variables para hallar el área de un triángulo. Base = 10, Altura = 5.
 
+const base = 10
+const altura = 5
+const areaTriangulo = (base * altura) / 2
+
+console.log(areaTriangulo) // 25
+
+
 // 2. Dado un número, mostrar "par y mayor a 10", "par y menor o igual a 10", "Impar"
+
+let numero2 = 12
+if (numero2 % 2 === 0 && numero2 > 10) {
+    console.log("par y mayor a 10")
+} else if (numero2 % 2 === 0 && numero2 <= 10) {
+    console.log("par y menor o igual a 10")
+} else {
+    console.log("impar")
+}       
 
 // 3. Dado un número entero, escribe un programa que:
 // - Muestre "fizzbuzz" si el número es divisible entre 3 y 5.
 // - Muestre "fizz" si el número es divisible solo entre 3.
 // - Muestre "buzz" si el número es divisible solo entre 5.
 // - En cualquier otro caso, debe mostrar el mismo número.
+
+let numero3 = 15
+
+if (numero3 % 3 === 0 && numero3 % 5 === 0) {
+    console.log("fizzbuzz")
+} else if (numero3 % 3 === 0) {
+    console.log("fizz")
+} else if (numero3 % 5 === 0) {
+    console.log("buzz")
+} else {
+    console.log(numero3)
+}
+
 
 // 10. Funciones
 
@@ -237,6 +285,8 @@ function saludoConNombre(nombre) {
 
 saludoConNombre('Victor')
 
+
+
 // Funciones que retornan valores
 
 function sumar(a, b) {
@@ -250,6 +300,9 @@ console.log(sumar(2, 3))
 let resultado = sumar(5, 8)
 console.log(resultado + 100)
 
+
+
+
 // Ejercicios:
 
 function esPar(numero) {
@@ -259,9 +312,41 @@ function esPar(numero) {
 console.log(esPar(4)) // true
 console.log(esPar(7)) // false
 
+
+
 // 1. Crear una función que reciba un número y devuelva el doble de ese número por consola
+
+function doble(numerox) {
+    return numerox * 2
+}
+console.log(doble(5)) // 10
+
+
 // 2. Crear una función que reciba dos números y devuelva el mayor por consola
+
+function mayor(a, b) {
+    return a > b ? a : b
+}
+console.log(mayor(10, 20)) // 20
+
 // 3. Reutilizar el ejercicio de fizzBuzz usando funciones de tal forma que puedan llamarlo de la siguiente manera. Ej. fizzBuzz(15) -> fizzbuzz
+
+function fizzBuzz(numero) {
+    if (numero % 3 === 0 && numero % 5 === 0) {
+        return "fizzbuzz"
+    } else if (numero % 3 === 0) {
+        return "fizz"
+    } else if (numero % 5 === 0) {
+        return "buzz"
+    } else {
+        return numero
+    }
+}
+console.log(fizzBuzz(15)) // fizzbuzz
+console.log(fizzBuzz(9)) // fizz
+console.log(fizzBuzz(10)) // buzz
+console.log(fizzBuzz(7)) // 7
+
 
 // 11. Cadena de texto
 
@@ -286,4 +371,21 @@ console.log(miNombre.includes("ict")) // true
 // EJERCICIOS:
 
 // 1. Dado un string, crear una función llamada evaluarTexto que devuelva: "Largo" si tiene más de 10 caracteres y "Corto" si tiene 10 o menos.
+
+function evaluarTexto(texto) {
+    return texto.length > 10 ? "Largo" : "Corto"
+}
+console.log(evaluarTexto("Hola")) // Corto
+console.log(evaluarTexto("Hola, ¿cómo estás?")) // Largo
+
+
 // 2. Dado un string, crear una función llamada invertirTexto que devuelve el texto invertido. Ej. hola -> aloh
+
+function invertirTexto(texto) {
+    let textoInvertido = ""
+    for (let i = texto.length - 1; i >= 0; i--) {
+        textoInvertido += texto[i]
+    }
+    return textoInvertido
+}
+console.log(invertirTexto("hola")) // aloh
