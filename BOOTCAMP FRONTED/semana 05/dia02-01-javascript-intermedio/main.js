@@ -127,6 +127,7 @@ const resultado = lenguajes.filter(function(item) {
 
 console.log(resultado) // ['javascript', 'C', 'c++']
 
+
 // Método MAP, evalue un arreglo, lo modifica y hay que pasarle una función. Nos devuelve un arreglo modificado. Siempre devuelve un nuevo arreglo.
 
 console.log(lenguajes)
@@ -139,6 +140,7 @@ const nombreConTitulo = lenguajes.map(function(lenguaje) {
 
 console.log(nombreConTitulo)
 
+
 // Método SORT, nos ayuda a ordenar un arreglo de elementos. Muta(cambia) el arreglo original. Usar toSorted() en lugar de sort como recomendación.
 
 // const ordenandoLenguajes = lenguajes.sort() // Sort muta el arreglo original
@@ -146,6 +148,7 @@ const ordenandoLenguajes = lenguajes.toSorted()
 
 console.log(ordenandoLenguajes)
 console.log(lenguajes)
+
 
 // Método FOREACH, nos ayuda a recorrer un arreglo sin tener ningun retorno de datos
 
@@ -162,6 +165,7 @@ lenguajes.forEach(function(lenguaje) {
 
 console.log(miArreglo)
 
+
 // Método REDUCE, nos ayuda a acumular(sumar) los valores de un arreglo.
 
 const numeros = [3, 40, 100, 7, 50] // 200
@@ -176,6 +180,7 @@ for(let i = 0; i < numeros.length; i++) {
 
 console.log(sumatoria)
 
+
 // Con Reduce
 
 const sumatoriaConReduce = numeros.reduce(function(acumulador, valorActual) {
@@ -183,6 +188,9 @@ const sumatoriaConReduce = numeros.reduce(function(acumulador, valorActual) {
 }, 0)
 
 console.log(sumatoriaConReduce)
+
+
+
 
 // OBJETOS, una forma de guardar información en pares de clave: valor.
 
