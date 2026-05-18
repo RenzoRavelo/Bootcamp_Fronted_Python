@@ -57,7 +57,7 @@ console.log(listaDeNombres)
 
 // Insertar un elemento en un posición determinada
 
-listaDeNombres.splice(0, 0, 'CÓDIGO')
+listaDeNombres.splice(0, 0, 'CÓDIGO') //
 listaDeNombres.splice(2, 0, 'TECSUP')
 
 console.log(listaDeNombres)
@@ -82,6 +82,30 @@ console.log(listaDeNombres.at(-1)) // Renzo
 console.log(listaDeNombres.at(-2)) // Guillermo
 
 // TODO: Otras funciones: slice (Investiguen)
+
+const listaDeFrutas = ['manzana', 'banana', 'cereza', 'durazno', 'uva'];
+
+// Desde el índice 1 hasta el final
+console.log(listaDeFrutas.slice(1)); 
+// ['banana', 'cereza', 'durazno', 'uva']
+
+// Desde el índice 1 hasta el 3 (sin incluir el 3)
+console.log(listaDeFrutas.slice(1, 3)); 
+// ['banana', 'cereza']
+
+// Últimos dos elementos
+console.log(listaDeFrutas.slice(-2)); 
+// ['durazno', 'uva']
+
+// Desde el índice 2 hasta el penúltimo
+console.log(listaDeFrutas.slice(2, -1)); 
+// ['cereza', 'durazno']
+
+// Copia completa del array
+console.log(listaDeFrutas.slice()); 
+// ['manzana', 'banana', 'cereza', 'durazno', 'uva']
+
+
 
 // MÉTODOS DE ARREGLOS
 
