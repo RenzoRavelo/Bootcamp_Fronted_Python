@@ -403,13 +403,11 @@ function promedioArray(arr = []) {
   if (arr.length === 0) {
     return 0;
   }
-
   let suma = 0;
-  
+
   for (let i = 0; i < arr.length; i++) {
     suma = suma + arr[i];
   }
-
   let promedio = suma / arr.length;
 
   return promedio;
@@ -436,7 +434,6 @@ function textoALista(texto = '') {
     let palabraLimpia = elementosSucios[i].trim();
     listaLimpia.push(palabraLimpia);
   }
-
   return listaLimpia;
 }
 

@@ -1,6 +1,11 @@
 console.log(Math.random() * 3) // 0 <= número aleatorio < 3
 console.log(Math.floor(Math.random() * 3)) // Nos quedamos con la parte entera usando floor
 
+
+
+
+
+
 const emojiList = ['🍕','🍔','🍟','🌭','🍿','😁','🤣','😂','😀','🤗','😎','😣','🙄','😯','🥰','😗','😲','🤑','😤','🤪','😵','🤢','🤬','😱','💀','👾','🤧','🤡','💀','👽','💩']
 
 const elemento = document.querySelector('section')
