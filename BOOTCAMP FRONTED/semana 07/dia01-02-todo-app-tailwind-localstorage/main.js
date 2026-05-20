@@ -47,11 +47,27 @@ taskInput.addEventListener('keydown', function(event) {
 })
 
 // TODO: Añadir la lógica necesaria al botón "Limpiar tareas completadas" para que limpie las tareas completadas incluso debe actualizar el LS
+taskClear.addEventListener('click', function() {
+  const modifiedTasks = tasks.filter(function(task) {
+    return !task.completed
+  })
+
+  tasks = modifiedTasks
+
+  renderTasks(tasks)
+
+  saveTasks(tasks)
+})
 
 function renderTasks(tasks = []) {
   // TODO: Añadir el contenido "No hay tareas registradas" si no hay tareas en el array tasks
-
   let lista = ''
+
+  if (tasks.length === 0) {
+    lista = '<h2 class="text-center text-gray-500">No hay tareas registradas</h2>'
+  } else {
+    lista = ''
+  } 
 
   tasks.forEach(function(task, index) {
     lista = lista + `
