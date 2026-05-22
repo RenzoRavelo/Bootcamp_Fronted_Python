@@ -73,3 +73,21 @@ fetchUsersConManejoDeErrores()
 // Mostrar un mensaje de cargando
 // Mostrar solo usuarios de una ciudad, la ciudad es a su elección
 // Mostrar cuántos usuarios hay en el listado de users
+
+
+document.querySelector('#app').innerHTML = '<h2>Cargando...</h2>'
+
+fetchUsersConManejoDeErrores()
+  .then(users => {
+    if (!users) return   // Mostrar un mensaje de cargando
+    
+    const ciudadElegida = 'Gwenborough'
+    const usuariosFiltrados = users.filter(user => user.address.city === ciudadElegida)  //Mostrar solo usuarios de una ciudad 
+
+    renderUsers(usuariosFiltrados) // Usuarios de esa ciudad
+
+    const totalUsuarios = usuariosFiltrados.length   // Mostrar cuántos usuarios hay en el listado
+    
+    const divApp = document.querySelector('#app')
+    divApp.innerHTML += `<p><b>Total de usuarios: ${totalUsuarios}</b></p>`
+  })
